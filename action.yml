@@ -1,0 +1,28 @@
+name: 'Upload File To Google Drive'
+description: 'Google drive uploader'
+inputs:
+  file-path:
+    description: 'path of file need to be uploaded'
+    required: true
+  upload-name:
+    description: 'name of file should store on your dirve'
+    required: true
+  upload-to-folder-id:
+    description: 'folder id on your drive that should contains this file'
+    required: true
+  service-account-json:
+    description: 'json data of service account credential'
+    required: true
+  overrwrite:
+    description: 'overwrite existed file or not'
+    required: true
+outputs:
+  file-id:
+    description: 'id of uploaded file'
+  web-content-link:
+    description: 'link download as web content'
+  web-view-link:
+    description: 'link download as web view'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
